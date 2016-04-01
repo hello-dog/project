@@ -53,29 +53,29 @@ public class RobberService extends AccessibilityService {
             if (mAccessibilityNodeInfo == null) {
                 return;
             }
-            Log.d("RobberService", "-----------content ----------------------:  " + mAccessibilityNodeInfo.getClassName());
-            Log.d("RobberService", "id: " + mAccessibilityNodeInfo.toString());
-            Log.d("RobberService", "children: " + mAccessibilityNodeInfo.getChildCount());
-            Log.d("RobberService", "text: " + mAccessibilityNodeInfo.getText());
-            Log.d("RobberService", "is clickable: " + mAccessibilityNodeInfo.isClickable());
-            getInfo(mAccessibilityNodeInfo, "");
+//            Log.d("RobberService", "-----------content ----------------------:  " + mAccessibilityNodeInfo.getClassName());
+//            Log.d("RobberService", "id: " + mAccessibilityNodeInfo.toString());
+//            Log.d("RobberService", "children: " + mAccessibilityNodeInfo.getChildCount());
+//            Log.d("RobberService", "text: " + mAccessibilityNodeInfo.getText());
+//            Log.d("RobberService", "is clickable: " + mAccessibilityNodeInfo.isClickable());
+//            getInfo(mAccessibilityNodeInfo, "");
 
             List<AccessibilityNodeInfo> listNodes = mAccessibilityNodeInfo.findAccessibilityNodeInfosByText("微信红包");
             if (listNodes.size() > 0) {
-                Log.d("RobberService", "--------list.size: " + listNodes.size());
+                //Log.d("RobberService", "--------list.size: " + listNodes.size());
                 list.clear();
                 int count = getNodes(mAccessibilityNodeInfo);
-                Log.d("RobberService", "--------node count: " + count);
+               // Log.d("RobberService", "--------node count: " + count);
                 int index1 = getIndex("微信红包");
                 int index2 = getIndex("你领取了");
                 Log.d("RobberService", "--------index1: " + index1 + " index2: " + index2);
-                if (index1 != -1){
-                    AccessibilityNodeInfo p = list.get(index1).getParent();
-                    if(p != null){
-                        Log.d("RobberService", "--------set");
-
-                    }
-                }
+//                if (index1 != -1){
+//                    AccessibilityNodeInfo p = list.get(index1).getParent();
+//                    if(p != null){
+//                        Log.d("RobberService", "--------set");
+//
+//                    }
+//                }
                 if (index1 < index2){
                     return;
                 }
